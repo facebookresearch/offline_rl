@@ -18,6 +18,7 @@ from . import walker
 from . import cheetah
 from . import quadruped
 from . import humanoid
+from . import pointmass
 
 class UnsupportedPlatform(unittest.SkipTest, RuntimeError):
     """The platform is not supported for running"""
@@ -187,6 +188,11 @@ def _make_dmc(domain, task, seed):
                              visualize_reward=False)
     elif domain == 'quadruped':
         return quadruped.make(task,
+                              task_kwargs=dict(random=seed),
+                              environment_kwargs=dict(flat_observation=True),
+                              visualize_reward=False)
+    elif domain == 'pointmass':
+        return pointmass.make(task,
                               task_kwargs=dict(random=seed),
                               environment_kwargs=dict(flat_observation=True),
                               visualize_reward=False)
