@@ -52,6 +52,20 @@ _STAND_HEIGHT = 1.2
 # Horizontal speed (meters/second) above which move reward is 1.
 _RUN_SPEED = 8
 
+# Threshold to define when a target speed is reached
+_SPEED_THRESHOLD = 0.5
+# The maximum allowed height for crawling
+_CRAWL_HEIGHT = 0.4
+# Minimum height to consider a foot off the ground
+_FEET_HEIGHT = 0.2
+# Maximum feet height allowed for crawling
+_CRAWL_FEET_HEIGHT = 0.6
+# Minimum angle allowed to be in a lie back position
+_CRAWL_LIE_BACK = 0.9
+
+# Angular velocity for the flip task
+_SPIN_SPEED = 5
+
 SUITE = containers.TaggedTasks()
 
 def make(task,
